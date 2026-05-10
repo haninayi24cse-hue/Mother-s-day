@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Mother's Day Mumma ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ffc2d1; --lavender: #e2cfea; --cream: #fbfefb; --blue: #d6e2e9; --accent: #d81b60;
+        }
+
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--pink), var(--lavender), var(--blue));
+        }
+
+        .page {
+            position: absolute; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transition: 0.6s ease; padding: 20px; text-align: center;
+        }
+
+        .page.active { opacity: 1; visibility: visible; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(15px);
+            border-radius: 30px; padding: 25px; width: 90%; max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; }
+        
+        .sticker-btn {
+            background: white; border: none; border-radius: 20px; padding: 15px;
+            cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .sticker-btn:hover { transform: scale(1.05) rotate(2deg); }
+        .sticker-btn img { width: 55px; height: 55px; object-fit: contain; margin-bottom: 5px; border-radius: 10px; }
+        .sticker-btn span { display: block; font-size: 0.8rem; font-weight: bold; color: var(--accent); }
+
+        .display-img { width: 85%; max-width: 280px; border-radius: 20px; margin-bottom: 15px; animation: float 3s infinite ease-in-out; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .back-btn { margin-top: 25px; background: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; color: var(--accent); font-weight: bold; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        
+        /* Typewriter text styling */
+        .typewriter-text { font-style: italic; color: #444; min-height: 100px; font-size: 1.1rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="my_song.mp3" type="audio/mpeg">
+    </audio>
+
+    <section id="home" class="page active">
+        <img src="input_file_4.png" alt="Welcome" class="display-img">
+        <div class="glass-card">
+            <h1 style="font-family:'Dancing Script'; color:var(--accent); margin:0;">Wish you a very very happiest Mother's Dayyy My world❤️</h1>
+            <button class="back-btn" style="background:var(--accent); color:white;" onclick="startSurprise()">Open Surprise</button>
+        </div>
+    </section>
+
+    <section id="surprise" class="page">
+        <div class="glass-card">
+            <h2 style="font-family:'Dancing Script'; color:var(--accent);">Gifts For You</h2>
+            <div class="menu-grid">
+                <button class="sticker-btn" onclick="showPage('memory')">📖<span>Memories</span></button>
+                <button class="sticker-btn" onclick="showPage('flowers')"><img src="input_file_1.png.jpeg"><span>Flowers</span></button>
+                <button class="sticker-btn" onclick="showPage('video_text')"><img src="input_file_5.png"><span>Special Msg</span></button>
+                <button class="sticker-btn" onclick="showPage('hug')"><img src="input_file_2.png.jpeg"><span>A Hug</span></button>
+                <button class="sticker-btn" onclick="showPage('secret')"><img src="input_file_3.png.png"><span>Secret</span></button>
+                <button class="sticker-btn" onclick="showPage('You are the best Mom ever!')">⭐<span>Special</span></button>
+            </div>
+        </div>
+        <button class="back-btn" onclick="showPage('home')">← Home</button>
+    </section>
+
+    <section id="memory" class="page">
+        <div class="glass-card">
+            <div id="typewriter1" class="typewriter-text"></div>
+        </div>
+        <button class="back-btn" onclick="showPage('surprise')">Back</button>
+    </section>
+
+    <section id="video_text" class="page">
+        <div class="glass-card">
+            <h2 style="font-family:'Dancing Script'; color:var(--accent);">For My Best Mumma</h2>
+            <div id="typewriter2" class="typewriter-text"></div>
+        </div>
+        <button class="back-btn" onclick="showPage('surprise')">Back</button>
+    </section>
+
+    <section id="flowers" class="page">
+        <img src="input_file_1.png.jpeg" class="display-img">
+        <div class="glass-card">
+            <p>A digital bouquet that never fades, just like my love for you!</p>
+        </div>
+        <button class="back-btn" onclick="showPage('surprise')">Back</button>
+    </section>
+
+    <section id="hug" class="page">
+        <img src="input_file_2.png.jpeg" class="display-img">
+        <div class="glass-card">
+            <p>A giant virtual hug for the world's best Mumma! 🤗 Dear mummadii, I feel so blessed to have you as my mummyy believing in me and doing so much for me 💫 thank you so much ror your endless love,unwavering support.You're the heart and soul of our family.Happy moters day mummudiiiii💕</p>
+        </div>
+        <button class="back-btn" onclick="showPage('surprise')">Back</button>
+    </section>
+
+    <section id="secret" class="page">
+        <img src="input_file_3.png.png" class="display-img" style="border-radius: 50%;">
+        <div class="glass-card">
+            <h2>The Secret...</h2>
+            <p>I am so proud to be your daughter. You make everything magical. Mumma aapake liye ek shayarii ❤️ Maa aur uski Mamta Dono main me noor hain...!!! Kisi Heere ki Zarurat kya,Meri toh Maa hi Kohinoor hain...!!💗💝</p>
+        </div>
+        <button class="back-btn" onclick="showPage('surprise')">Back</button>
+    </section>
+
+    <script>
+        function startSurprise() {
+            document.getElementById('bgMusic').play().catch(e => console.log("Music ready"));
+            showPage('surprise');
+        }
+
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            if(id === 'memory') {
+                startType('typewriter1', "Dear Mumma, You are my best friend and my biggest strength. Thank you for everything you do for me. This small gift is to show you how much I love you. Happy Mother's Day! ❤️");
+            }
+            if(id === 'video_text') {
+                startType('typewriter2', "Mumma, maine aapke liye ek video clip banayi thi lekin wo technical wajah se chal nahi paayi... Isliye main yahan likh kar bata rahi hoon ki aap mere liye kya ho. Aap meri poori duniya ho aur main aapse bahut zyada pyaar karti hoon! sOMETIMES I JUST WANT TO HUG MY MUMMUDIII TIGHTLY AND THANK FOR LOVING ME IF LIFE LIFE IS MY BOOL MY MATA SHREE 😉😘 IS MY FAVOURITE CHAPTERR❤️");
+            }
+        }
+
+        function startType(elementId, text) {
+            const el = document.getElementById(elementId);
+            el.innerHTML = "";
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    el.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 50);
+                }
+            }
+            type();
+        }
+    </script>
+</body>
+</html>
